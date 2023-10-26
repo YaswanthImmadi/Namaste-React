@@ -14,6 +14,7 @@
 // 1) Tag 
 // 2)an object of atributes
 // 3)"the contenet that need to be placed in the defined tag"
+// the render method, renders the react.CreateElement object as a HTML element on the browser
 
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
@@ -28,3 +29,5 @@ const parent = React.createElement("div", { id: "parent" }, [
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(parent);
+
+
