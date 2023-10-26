@@ -1,0 +1,27 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "React Project using Parcel Bundler",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YaswanthImmadi/Namaste-React.git"
+  },
+  "author": "Yaswanth Sai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YaswanthImmadi/Namaste-React/issues"
+  },
+  "homepage": "https://github.com/YaswanthImmadi/Namaste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

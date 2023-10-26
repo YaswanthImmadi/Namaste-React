@@ -1,0 +1,144 @@
+(1)what is NPM ?
+
+    NPM is a package Manager which holds the huge repository , we can install packages , libraries for our project needs,
+    Npm doesnt have any predefined full form .
+
+(2) What is Parcel/Webpack ? why do we need it ?
+
+    both parcel and webpack are build tools which helps bundling the code (HTML, CSS Javascript),both have their own advantages
+    we need these build tools to
+    1) Manage the bundling of various code assets like HTML ,CSS and Javascript
+    2) are used to perform various optimizations like minification,tree shaking, code splitting e.t.c
+
+    3) Both tools offer features for improving the developer's workflow, such as hot module replacement, which allows for real-time updates during development.
+
+    The choice between Parcel and Webpack often comes down to the specific needs of your project. 
+    If you want a simple, out-of-the-box solution with minimal configuration, Parcel is a good choice. 
+    If you have a complex project that requires extensive customization and optimization, Webpack provides more flexibility and control.
+
+
+(3) What is '.parcel-cache' ?
+        The .parcel-cache directory is a folder created by the Parcel bundler in your project directory.
+         It is used to store cached build artifacts and dependencies, making subsequent builds faster
+         and more efficient.
+
+         the file will be created when you run the command
+         npx parcel "File_name.html"
+
+(4) What is npx?
+    npx is a command-line utility that comes with npm, the package manager for Node.js. 
+    It stands for "Node Package Runner" and is used to execute Node.js packages that are
+     not globally installed or to run binaries from packages that you don't want to install globally. 
+     npx simplifies the process of running packages and commands, making it easier to work with 
+     various Node.js tools and scripts without cluttering your global package installation.
+
+(5) What is the Difference between dependencies and devDependencies?
+
+    dependencies are for packages that your application depends on for its normal operation in a production environment.
+    devDependencies are for packages that are only necessary during development and should not be included when your application is deployed.
+    Separating these two categories of packages helps keep your production environment efficient and avoids unnecessarily including development tools
+    and libraries that can bloat the final production build. It also ensures that anyone else who works on your project knows which packages are essential for 
+    running the application and which are meant for development and testing purposes.
+
+(6) What is tree Shaking ?
+
+     tree shaking is a technique used to eliminate dead code (unused or unreferenced code) from the final JavaScript
+      bundle, reducing its size and improving the performance of web applications. 
+     It's an essential tool for optimizing the delivery of JavaScript in modern web development.
+
+(7) what is Hot Module Replacement ?
+
+        Hot Module Replacement (HMR) is a feature commonly found in modern JavaScript module bundlers and development
+         tools like Webpack, Rollup, and others. HMR allows developers to make changes to their code during 
+         development and see those changes reflected in the application in real-time without requiring a full page 
+         refresh or a complete application restart. It significantly speeds up the development process and enhances 
+         the developer's experience.
+
+(8) List Down any 5 super Powers of parcel and describe any 3 of them in your words ?
+
+       (i) Zero Configuration :
+                One of Parcel's most significant superpowers is its "zero-configuration" approach.
+                 You can start using Parcel without the need to write complex configuration files.
+                  This means less time spent on configuration and more time focused on coding.
+        (ii) Tree Shaking :
+                Described above 
+        (iii) Fast Development Server:
+                         Parcel comes with a built-in development server that makes it easy to test your applications
+                          during development. This server supports hot module replacement (HMR), allowing you to see
+                         changes in real-time without manually refreshing the browser.
+
+(9) what is '.gitignore' what should we add and what not to be added in it ?
+        .gitignore is a git file it tells git the files that are not needed to push to git 
+        it is not needed to add 
+        i) node_modules
+        ii).dist directory
+        iii) .parcel_cache
+
+        and we can add all other files except above 
+
+(10) what is the difference between package.json and package-lock.json ?
+
+    package.json is a project manifest file that describes your project and its dependencies, 
+    while package-lock.json is a lockfile that records the specific versions of dependencies to 
+    ensure consistency and reliability across different development environments. Both files are essential
+     for managing dependencies in a Node.js project, with package-lock.json playing a critical role in ensuring 
+     that everyone working on the project gets the same set of dependencies.
+
+(11)  why should i not modify package-lock.json file ?
+
+        it's best to let the package manager handle the generation and maintenance of the package-lock.json file 
+        to ensure a consistent and reliable project setup. Manual modifications should be avoided to prevent issues 
+        related to consistency, security, and dependency management.
+
+(12)  what is node_modules? is it a good idea to push to github ?
+
+        node_modules is where Node.js projects store their external dependencies.
+         It ensures that a project has access to the necessary packages and allows for modularity 
+         and code reuse in Node.js development.
+
+         and its not good idea to push node_modules to github since these can be generated afterwards using 
+         npm install
+
+(13)  what is dist folder?
+        In web development, the "dist" folder is an essential part of the build process. 
+        It represents the result of the development and build process, containing the assets 
+        and code optimized for a production environment.
+
+(14) what is browserlists , read about different bundlers vite , webpack,parcel ?
+
+        Browserslist is a configuration file and query tool used in web development to specify which browsers your 
+        project should support. It's often used in combination with tools like Autoprefixer and other CSS or 
+        JavaScript post-processing tools. Browserslist allows you to define a list of target browsers by name, 
+        version, or usage statistics, and it helps ensure that your web application is compatible with a specific 
+        range of browsers. By specifying your target browsers, you can automatically apply vendor prefixes and other 
+        browser-specific optimizations to your code.
+
+(15)  what is the difference between ^(caret) and ~(tilda) in package.json file?
+    
+        when we use ^ infront of a dependency it will automatically updates to a minor updates whenever it is available
+        whereas ~ was used it only updates to a major version instaed of updatig t every minor updates.
+        example:
+
+       " dependencies"{
+            "react":"^18.5.6", the react package will be updated whenever there is a minor update available
+            "react-dom":"~6.5.5" whereas for react-dom it only updates when there is a major update available
+       }
+
+
+(16)  what are different script types in html ?
+
+        In HTML, the <script> element is used to include and execute JavaScript code within a web page.
+         You can specify the type of script using the type attribute. There are several script types that
+          you can use with the <script> element:
+
+        i) default (JavaScript)
+                    Example: <script>console.log("Hello, World!");</script>
+        ii) Module Scripts:
+                    Example: <script type="module" src="app.js"></script>
+        iii) JSON Scripts:
+        Example: <script type="application/json" id="config">{"apiKey": "your-api-key"}</script>
+
+
+
+
+

@@ -15,16 +15,18 @@
         const root=document.getElementById('root');
         root.appendChild(heading); -->
         <!-- /*Importing React CDN links in the script tag*/ -->
-      <script
+
+        <!-- Commenting out React CDN links Since installed React and React-Dom packages using npm -->
+      <!-- <script
         crossorigin
         src="https://unpkg.com/react@18/umd/react.production.min.js"
       ></script>
       <script
         crossorigin
         src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
-      ></script>
+      ></script> -->
       <!-- Order of defination matters in react , if app.js script defined above react CDN links , it will throw an error as React is not defined  -->
-      <script src="./App.js"></script>
+      <script type="module" src="./App.js"></script>
     </div>
   </body>
 </html>
