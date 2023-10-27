@@ -116,7 +116,7 @@
 (15)  what is the difference between ^(caret) and ~(tilda) in package.json file?
     
         when we use ^ infront of a dependency it will automatically updates to a minor updates whenever it is available
-        whereas ~ was used it only updates to a major version instaed of updatig t every minor updates.
+        whereas ~ was used it only updates to a major version instaed of updatig to every minor updates.
         example:
 
        " dependencies"{

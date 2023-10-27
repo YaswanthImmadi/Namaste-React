@@ -4,7 +4,9 @@
   "description": "React Project using Parcel Bundler",
 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"npx parcel index.html",
+    "build":"npx parcel build index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",

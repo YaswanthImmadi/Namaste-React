@@ -1,0 +1,169 @@
+(1) Is JSX mandatory for React ?
+
+        No, JSX (JavaScript XML) is not mandatory for React, but it is the most commonly used way to define the 
+        structure of your React components and elements. React doesn't require JSX to function; it can also be used 
+        with plain JavaScript or other templating languages.
+
+(2) Is ES6 mandatory for React?
+
+        ES6 (ECMAScript 2015) is not mandatory for React, but it is highly recommended and widely used in the 
+        React ecosystem. React itself does not depend on a specific version of ECMAScript, and you can write React
+         code using older versions of JavaScript if necessary.
+
+(3) How can i write comments in JSX?
+
+        for single line comments use //
+        for multi line comments use {/* *\}
+
+(4) what is <ReactFragment></ReactFragment> and <></> ?
+
+        In React, both <React.Fragment> and <> (a shorter syntax) are used to create a container for multiple elements without introducing an additional DOM element. This is often necessary when you want to return multiple elements from a component's render method or function, as a component can only return a single element or component.
+
+        Here's the key difference between <React.Fragment> and <> (a.k.a. "empty angle brackets" or "short syntax"):
+
+        Syntax:
+
+        <React.Fragment>: This is the long-form syntax for creating a fragment. You explicitly use the 
+        <React.Fragment> element as a wrapper for your elements.
+        <> (Short Syntax): This is a shorter, more concise syntax introduced in React 16.2. It allows you to 
+        create a fragment using empty angle brackets, which is more concise and visually cleaner.
+        jsx
+        Copy code
+        // Using <React.Fragment>
+        <React.Fragment>
+        <div>Element 1</div>
+        <div>Element 2</div>
+        </React.Fragment>
+
+        // Using <>
+        <>
+        <div>Element 1</div>
+        <div>Element 2</div>
+        </>
+        Both methods achieve the same result, but <> is preferred for its brevity.
+
+        The primary reason for using fragments is to avoid adding unnecessary DOM elements to the page. 
+        Wrapping elements in a fragment ensures that you don't introduce an extra parent element in the DOM tree,
+         which can be useful for styling and layout purposes.
+
+        Here's an example illustrating how fragments are used in a component's render method:
+
+        jsx
+        import React from 'react';
+
+        function MyComponent() {
+        return (
+            <>
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+            </>
+        );
+        }
+        In the above example, the <> (or <React.Fragment>) is used to wrap multiple elements without creating 
+        a new parent element in the DOM. This can help maintain a clean and logical DOM structure while rendering
+         multiple elements in a React component.
+
+        *****
+        There is one key difference between <React.Fragment> and <> (the short syntax) in React, and
+         it is related to the ability to assign keys to fragments when mapping over arrays of elements. 
+         This difference is specific to the long-form <React.Fragment>.
+
+        In the short syntax <>, key assignment is not supported. Here's the difference:
+
+        Key Assignment:
+
+        <React.Fragment>: With the long-form syntax, you can assign keys to the fragment.
+         This can be useful when you are mapping over an array of elements and React requires keys to uniquely
+          identify each element.
+        jsx
+        Copy code
+        <React.Fragment key={someKey}>
+        <div>Element 1</div>
+        <div>Element 2</div>
+        </React.Fragment>
+        <> (Short Syntax): The short syntax <> does not support assigning keys directly to the fragment. If you
+         need to assign keys to elements within a fragment, you should use the long-form syntax with <React.Fragment>.
+        So, if you need to assign keys to the elements within the fragment, you would use <React.Fragment> 
+        instead of <>. Otherwise, for most cases where you don't need to assign keys, there's no functional 
+        difference between them, and the choice between <React.Fragment> and <> is based on coding style and 
+        personal preference.
+
+
+(5) what is virtual DOM ?
+
+        The Virtual DOM (VDOM) is a concept used in web development frameworks like React to optimize the performance 
+        of updating the user interface (UI). It's a lightweight, in-memory representation of the actual Document 
+        Object Model (DOM) of a web page. The primary purpose of the Virtual DOM is to improve efficiency when 
+        rendering changes to the UI.
+
+        In summary, the Virtual DOM is a critical optimization technique used in React and similar frameworks to make 
+        UI updates more efficient and to ensure that web applications remain responsive and performant, 
+        even as they become more complex.
+
+(6) What is Reconciliation in React ?
+
+        Reconciliation in React refers to the process of efficiently updating the Document Object Model (DOM) to
+         reflect changes in the application's state or data. React's reconciliation algorithm is responsible for 
+         comparing the current state of a component's Virtual DOM (VDOM) representation with its previous state and 
+         making the necessary updates to the actual DOM to reflect these changes.
+
+
+(7) What is React Fiber?
+
+        React Fiber, also known as the "Fiber Architecture," is a fundamental reimplementation of React's core algorithm for rendering user 
+        interfaces. It was introduced to React in version 16 to improve the performance and responsiveness of React applications. Fiber allows 
+        React to perform more efficient reconciliation of the Virtual DOM and to better manage the rendering of complex and time-consuming 
+        components.
+
+        The key features and benefits of React Fiber include:
+
+        Incremental Rendering: Fiber introduces the concept of "work-in-progress" and allows React to work on rendering small chunks of work
+         at a time. This enables React to be more responsive and avoid blocking the main thread for extended periods. As a result, applications 
+         can remain smooth and responsive even when dealing with complex UI updates.
+
+        Priority Reconciliation: Fiber provides a priority system for scheduling work. It categorizes different types of work
+         (e.g., rendering, animation, user input handling) into priorities. React can then adjust its schedule to ensure that high-priority work,
+          such as user interactions, is processed quickly and doesn't block lower-priority work.
+
+        Concurrent Mode: Concurrent Mode is an experimental feature built on top of the Fiber architecture. It allows React to work on 
+        multiple tasks concurrently and to pause and resume rendering as needed. This feature is particularly useful for building applications 
+        that require real-time updates and prioritizing critical user interactions.
+
+        Error Handling: React Fiber improves error handling by making it easier to capture and report errors without crashing the entire 
+        application. This results in a more stable and robust application.
+
+        Async Rendering: Fiber introduces the ability to work on rendering tasks asynchronously, which means React can split rendering work over
+         multiple frames. This results in a smoother and more responsive user experience.
+
+        React Fiber represents a significant step forward in the evolution of React's internal architecture. It allows React to handle the
+         challenges of modern web applications with complex UIs, real-time updates, and interactive user experiences while maintaining a high level
+          of performance and responsiveness. 
+
+
+(8)** What is Config driven UI ?
+
+            A "config-driven UI" (User Interface) refers to a user interface design or development approach where the structure and 
+            behavior of the user interface are primarily defined and controlled through configuration files or data, rather than being
+             hard-coded in the application's source code. This approach separates the UI configuration from the application logic, 
+             making it more flexible, customizable, and easier to maintain. Config-driven UIs are commonly used in various contexts,
+              including web applications, mobile apps, and software systems. Here are some key aspects of a config-driven UI:
+
+(9) Why do we need Keys in React ? when do we need Keys in React ?
+
+        In summary, keys in React are crucial for optimizing the rendering and reconciliation of lists of components or elements. 
+        They enable React to efficiently track changes, preserve component state, and maintain a stable element identity, resulting
+         in a smoother and more reliable user interface.
+
+(10) what is Props in react ?
+
+        props are nothing but arguments in normal javascript function , we use props when we want to send data from one component to another component
+
+(11) Can we use Index as a key in react ?
+
+        It was ok to use index as a key in react , However it is not recommended to use index as a key because whenever a change in the list happens 
+        react confuses and it might cause unnecessary rendering issues and also impacts on performance of the React application
+
+
+
+

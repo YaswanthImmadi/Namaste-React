@@ -1,0 +1,35 @@
+(1) What is JSX?
+        JSX stands for "JavaScript XML." It is a syntax extension for JavaScript often used with React, a popular
+         JavaScript library for building user interfaces. JSX allows developers to write HTML-like code within their
+          JavaScript code, making it easier to create and manage the structure and content of web pages or user 
+          interfaces.
+
+        Here's a simple example of JSX:
+        const heading=<h1>Namaste React , Welcome to JSX</h1>
+
+(2)  what are the SuperPowers of JSX ?
+
+       i) it is a Declarative synatax allows you to describe the structure of your user interface in a more declarative way
+    
+      ii) Component Based Architecture , allows you to create reusable and composible UI Componets.
+      iii) Javascript Integration , jsx seamlessly integrates with javascript allows you to use javascript expressions in JSX
+      iv) server side rendering,
+      v) Rich Ecosystem,
+      vi) Great Community support
+      vii) Easy event handling
+      viii) inline styling
+      ix) conditional rendering
+
+(3) what is the type attribute in script tag , what options can i use along with type attribute ?
+
+        The type attribute in the <script> tag is used to specify the type or language of the script being executed. 
+        It tells the browser how to interpret and execute the content inside the <script> element. 
+        the type attribute is optional in HTML5, but it's good practice to include it for clarity and compatibility
+
+        we can use options like 
+        (default)Javascript 
+        moddule
+        aplication/JSON
+        text/css
+        text/ecmascript-6
+        
