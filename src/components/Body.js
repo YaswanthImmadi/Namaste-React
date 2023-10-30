@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
+  const [filteredList, setFilteredList] = useState([]);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -13,14 +15,19 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     console.log(json);
     setListOfRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredList(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
   };
+
+  console.log("Body Rendered");
 
   //conditional Rendering using If/else
   // if (listOfRestaurants.length === 0) {
@@ -32,13 +39,35 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            className="search-btn"
+            onClick={() => {
+              let filterData = listOfRestaurants.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setFilteredList(filterData);
+            }}
+          >
+            search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
             filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating >= 4
             );
-            console.log(filteredList);
+            // console.log(filteredList);
             setListOfRestaurants(filteredList);
           }}
         >
@@ -67,7 +96,8 @@ const Body = () => {
           <RestaurantCard resData={resList[18]} />
           <RestaurantCard resData={resList[19]} /> */}
         {/* Instaed Of manually creating the RestaurantCard component we can use map function to loop over the resList like below */}
-        {listOfRestaurants.map((restaurant) => (
+        {filteredList.map((restaurant) => (
+          // console.log(restaurant)
           // console.log(restaurant)
           <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}

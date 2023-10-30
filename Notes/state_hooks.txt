@@ -1,0 +1,108 @@
+(1) what is a Microservice?
+        
+    A microservice is a software architectural style that structures an application as a collection of small,
+    independently deployable services. These services are designed to perform specific, well-defined functions
+    and communicate with each other through well-defined APIs (Application Programming Interfaces).
+
+(2) what is monolith Architecture?
+       A monolithic architecture, often referred to as a monolith, is a traditional software architectural style 
+       in which all the components and functions of an application are tightly integrated and packaged as a single, 
+       unified codebase and runtime. In a monolithic application, all the features, business logic, 
+       and data processing are part of a single, cohesive unit.
+
+(3) what is the difference between monolith and microservice?
+        Monolithic and microservices architectures are two different approaches to structuring software applications.
+         Here are the key differences between them:
+
+Architectural Style:
+
+Monolithic: In a monolithic architecture, the entire application is a single, tightly integrated codebase and runtime. All components and functionalities are part of a single unit.
+Microservices: In a microservices architecture, the application is broken down into a collection of small, independently deployable services, each responsible for a specific function or feature.
+Component Size and Coupling:
+
+Monolithic: Monolithic applications have tightly coupled components, where changes in one part can affect other parts of the application. Components are often interdependent.
+Microservices: Microservices are loosely coupled. Each service is independent and encapsulates a specific function. Changes to one service do not directly impact other services.
+Deployment:
+
+Monolithic: Monolithic applications are typically deployed as a single unit. Changes to any part of the application may require redeploying the entire monolith.
+Microservices: Microservices can be individually deployed. This allows for more frequent and targeted deployments, reducing the impact of changes on the entire application.
+Scalability:
+
+Monolithic: Scaling a monolithic application often involves vertical scaling, which means adding more resources (e.g., CPU, memory) to a single instance of the application.
+Microservices: Microservices allow for fine-grained horizontal scaling. You can independently scale specific services to meet demand.
+Development and Team Structure:
+
+Monolithic: Monolithic applications may require large development teams to coordinate changes across the monolith. Teams may work on different features but within the same codebase.
+Microservices: Microservices enable smaller, more specialized development teams to work on individual services. Each team can focus on a specific service, making development more modular and agile.
+Data Management:
+
+Monolithic: Monolithic applications often use a single, shared database, which can lead to tight coupling between components.
+Microservices: Microservices can have their own data storage mechanisms, which reduces data coupling and allows for polyglot persistence.
+Technology Stack Diversity:
+
+Monolithic: Monolithic applications tend to use a consistent technology stack throughout because all components are part of the same codebase.
+Microservices: Microservices can use diverse technologies, as each service can choose the most appropriate technology for its specific requirements.
+Development and Deployment Speed:
+
+Monolithic: Development and deployment can be slower and riskier due to the need to coordinate changes and test the entire application.
+Microservices: Microservices allow for faster development and more frequent, independent deployments, improving agility.
+The choice between monolithic and microservices architectures depends on factors such as the size and complexity of the application, organizational structure,
+ development team size, scalability requirements, and the need for flexibility and rapid development. Both architectures have their strengths and weaknesses, 
+ and the decision should align with the specific goals and constraints of the project.
+
+
+(4) why do we need a useEffectHook()?
+        useEffect is responsible for initiating the data fetching when the component mounts, 
+        and it updates the state when the data is received. This showcases one of the most common 
+        use cases for useEffect.
+        and useEffect also be used wheneever we want to perform any side effects
+
+(5) what is optional chaining? why do we need it?
+        Optional chaining is a feature in modern programming languages, including JavaScript, that provides a convenient and safe way 
+        to access properties and methods on objects or elements of complex data structures. It's particularly 
+        useful for dealing with potentially undefined or null values, and it helps prevent runtime errors.
+
+(6) What is the Difference between Js expression and a JS statement ?
+     a JS expression is a piece of code that produces some value when exeecuted
+    and a JS statement is a complete line of code written.
+
+(7) what is conditional rendering , expalin it with a code example ?
+        Conditional rendering is something that we want to render based on a condition , for example
+        refer the Body component where we are rendering the Body and a shimmer component based on the condition.
+
+(8) what is CORS?
+        CORS, which stands for Cross-Origin Resource Sharing, is a security feature implemented by web browsers 
+        that controls and restricts web page scripts running at one origin (domain) from making requests to a 
+        different origin. An origin, in this context, is defined by the combination of the protocol 
+        (e.g., HTTP, HTTPS), domain (e.g., example.com), and port (e.g., 80, 443).
+
+        CORS is a vital security mechanism for web applications, as it helps prevent malicious websites from 
+        making unauthorized requests to a different domain on behalf of the user's browser. 
+        It is a fundamental part of web security, especially in the context of modern web applications that
+         rely on making API requests to different domains for data and resources.
+
+(9) what is async and await ?
+        async Function:
+
+        An async function is a function that is defined using the async keyword before the function keyword.
+         It returns a Promise implicitly. Inside an async function, you can use the await keyword to pause the 
+         execution of the function until a Promise is settled (resolved or rejected).
+
+        Example of an async function:
+         async function fetchData() {
+        // Asynchronous operations
+        const data = await fetch('https://api.example.com/data');
+        return data.json();
+        }
+        await Operator:
+
+        The await operator is used inside an async function to pause the execution of that function until the Promise being awaited is resolved. 
+        This allows you to work with asynchronous operations in a more synchronous-style code flow
+
+
+
+
+
+
+
+

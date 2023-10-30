@@ -25,13 +25,13 @@
     padding: 5px;
     background-color: #f0f0ff;
     margin:0px 20px 20px 30px;
-   
+    border-radius: 10px;
     overflow-wrap: break-word;
 }
 .res-card:hover{
     border: 1px solid black;
-    transform: scale(1.2);
-    transition: transform 0.2s ease-in-out;
+    transform: scale(1.1);
+    transition: transform 0.1s ease-in-out;
     cursor: pointer;
     
 }
@@ -46,10 +46,10 @@
     flex-wrap: wrap;
     margin:0px 20px 0px 30px;
 }
-.filter-btn{
+/* .filter-btn{
     margin: 20px;
     cursor: pointer;
-}
+} */
 
 .res-logo{
     width: 100%; /* Make sure the image does not exceed the container width */
@@ -83,3 +83,17 @@
     overflow-wrap: break-word;
 }
 
+/* ------------------------------------------------------------------------------------------------------------ */
+.search-btn{
+    margin:20px 0px;
+    cursor: pointer;
+}
+.filter-btn{
+    margin: 20px 10px;
+}
+.search{
+    /* margin: 20px; */
+}
+.filter{
+    display: flex;
+}

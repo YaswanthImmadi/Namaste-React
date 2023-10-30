@@ -58,3 +58,8 @@ Question ? Can we use both named and default export together in react ?
 
 # https://github.com/acdlite/react-fiber-architecture
 
+
+#*****useState()*****
+--------------------
+Whenever a state variable changes/updates React will trigger a Reconciliation Cycle (Re-renders whole Component)
+Incase of an input field , react will Re-render whole component on every keyPress  of input field 
