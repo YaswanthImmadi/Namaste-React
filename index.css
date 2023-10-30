@@ -25,12 +25,15 @@
     padding: 5px;
     background-color: #f0f0ff;
     margin:0px 20px 20px 30px;
+   
+    overflow-wrap: break-word;
 }
 .res-card:hover{
     border: 1px solid black;
     transform: scale(1.2);
     transition: transform 0.2s ease-in-out;
     cursor: pointer;
+    
 }
 .res-card > h3{
     color:red;
@@ -43,8 +46,9 @@
     flex-wrap: wrap;
     margin:0px 20px 0px 30px;
 }
-.search{
-    padding: 10px;
+.filter-btn{
+    margin: 20px;
+    cursor: pointer;
 }
 
 .res-logo{
@@ -53,3 +57,29 @@
   /* Make sure the image does not exceed the container height  Remove any extra spacing around the image*/
 
 }
+.login{
+    padding: 0px 10px;
+    margin: 0px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* styling for shimmer UI */
+/* --------------------------------------------------------------------------------------------------- */
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin:0px 20px 0px 30px;
+}
+.shimmer-card{
+    width: 300px;
+    /* height: 450px; It Will Automatically takes height*/ 
+    padding: 5px;
+    background-color: #f0f0ff;
+    margin:0px 20px 20px 30px;
+   height: 350px;
+    overflow-wrap: break-word;
+}
+
