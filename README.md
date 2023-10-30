@@ -1,4 +1,4 @@
-Namaste React , Welcome tO React 18 Features
+Namaste React , Welcome to React 18 Features
 
 
 #parcel
