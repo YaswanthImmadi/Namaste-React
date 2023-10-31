@@ -1,0 +1,137 @@
+(1) What are various ways to add images into our app ? explain with code examples?
+    In a React web application, you can add and display images using the <img> tag or by importing images 
+    into your JavaScript/JSX files. Here are two common methods for adding images in a React application:
+
+Using the <img> tag in JSX:
+
+You can use the standard HTML <img> tag within your JSX code to display images. This approach is suitable for static images.
+
+jsx
+Copy code
+import React from 'react';
+
+function App() {
+  return (
+    <div>
+      <h1>My React App</h1>
+      <img src="/path/to/your-image.jpg" alt="Image Description" />
+    </div>
+  );
+}
+
+export default App;
+Ensure that you specify the correct path to your image.
+
+Importing images and using them in JSX:
+
+For dynamic images or when you want to utilize images as variables, you can import them and use them in your JSX code.
+ This is typically done using JavaScript ES6 import statements.
+
+First, place your images in a directory within your project, and then import and use them like this:
+
+jsx:
+-----
+import React from 'react';
+import myImage from './path/to/your-image.jpg';
+
+function App() {
+  return (
+    <div>
+      <h1>My React App</h1>
+      <img src={myImage} alt="Image Description" />
+    </div>
+  );
+}
+
+export default App;
+Make sure to adjust the file path to the actual location of your image file within your project. When you import an 
+image in this way, it's treated as a module and can be used as a variable in your JSX code.
+
+Remember to optimize and compress your images to reduce loading times, and consider using responsive images to 
+ensure a good user experience across various devices and screen sizes.
+
+(2) what would happen if we console.log(useState())?
+    If you console.log the result of useState() in a React component, you will see an array with two elements as the output. The first element is the current state value,
+     and the second element is a function that can be used to update the state.
+    Here's what the output will look like when you console.log useState():
+
+javascript
+
+console.log(useState());
+Output:
+
+bash
+[initialState, function]
+Here's an example of what the output could look like when using useState with an initial state value of 0:
+
+javascript
+console.log(useState(0));
+Output:
+
+bash
+
+[0, function]
+In the output, [0, function] represents an array where the first element 0 is the initial state value (in this case, it's 0), and the second element function is a function that you can call to update the state when needed. The actual function might have a different name, such as setState, and it can be used to change the state value.
+
+You would typically destructure the array returned by useState() to access and update the state value within your React component, like this:
+
+javascript
+
+const [count, setCount] = useState(0);
+
+// Now you can use 'count' to access the state value and 'setCount' to update it.
+In most practical cases, you would not directly log the result of useState() in your component, but rather use it to 
+manage state within your component.
+
+(3) How will useEffect() will behave if we dont add dependency array ?
+
+        if we dont add dependency array, the useEffect will be called for every render of the component.
+
+(4) What is SPA ?
+        PA stands for "Single Page Application." In the context of React, a Single Page Application is a web application that
+         loads a single HTML page and dynamically updates the content of that page as the user interacts with the application,
+          without requiring full page reloads. React is often used to build SPAs due to its ability to efficiently handle dynamic
+           content and user interactions.
+
+(5) what is the Difference between Client side Rendering and Server side Rendering ?
+    Client-side rendering (CSR) and server-side rendering (SSR) are two approaches to how web applications handle the rendering of content and the initial loading of web pages. They have distinct differences in how they operate:
+
+Client-Side Rendering (CSR):
+
+Initial Load: In CSR, the entire application, including the initial HTML, is delivered to the client (browser) as a single HTML file. This HTML file often contains references to JavaScript and CSS files.
+
+Rendering: After the initial HTML is loaded, the client's browser executes JavaScript to render the user interface and fetch data from APIs, typically through AJAX requests. This means that the rendering process occurs on the client side.
+
+Pros:
+
+Faster subsequent page transitions: Once the initial page is loaded, navigating between pages in the application is typically faster because only data is fetched, not entire HTML documents.
+Better user experience: CSR can provide a more interactive and responsive user experience.
+Cons:
+
+Slower initial page load: The initial load can be slower because it requires downloading and executing JavaScript, fetching data, and rendering the content on the client side.
+SEO challenges: Search engine optimization can be more challenging as search engine bots may not execute JavaScript, potentially leading to poor SEO rankings.
+Server-Side Rendering (SSR):
+
+Initial Load: In SSR, the server generates the HTML for the initial page request, including the actual content and data. The server sends fully rendered HTML to the client.
+
+Rendering: The client's browser receives pre-rendered HTML, and it can display the content immediately. The JavaScript code for interactivity can be loaded in parallel or after the initial HTML is displayed.
+
+Pros:
+
+Faster initial page load: SSR often leads to faster initial page loads since the client receives fully rendered HTML.
+SEO-friendly: SSR is more SEO-friendly because search engines can index the content as it's present in the initial HTML response.
+Cons:
+
+Slower subsequent page transitions: Navigating between pages can be slower compared to CSR, as each page may require a new server request and rendering.
+Server load: SSR can put a heavier load on the server because it's responsible for rendering HTML for each page request.
+In practice, some web applications combine both approaches by using techniques like "hydration," where an SSR-generated page is "hydrated" with JavaScript to provide interactivity. This is often referred to as "Server-Side Rendering with Client-Side Hydration." The choice between CSR and SSR depends on the specific requirements of your project, including factors like SEO, performance, and the level of interactivity you want to provide to users.
+
+
+
+
+
+
+
+
+
+

@@ -1,9 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header,{Header} from "./components/Header";
+import Header, { Header } from "./components/Header";
 import Body from "./components/Body";
-
-
+import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+import RestaurantInfo from "./components/RestaurantInfo";
 {
   /* <div id="parent">
     <div id="child1">
@@ -34,16 +37,41 @@ import Body from "./components/Body";
 // ]);
 // if we want to write more than one line in a tag then use parenthesis like below
 
-
-
 const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
+const appRouter =createBrowserRouter( [
+  {
+    path: "/",
+    element: <AppLayout />,
+    children:[
+      {
+        path:"/",
+        element:<Body/>
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+      {
+        path:"/restaurant/:id",
+        element:<RestaurantInfo/>
+      }
+    ],
+    errorElement:<Error/>
+  },
+ 
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);

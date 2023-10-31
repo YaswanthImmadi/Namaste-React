@@ -63,3 +63,7 @@ Question ? Can we use both named and default export together in react ?
 --------------------
 Whenever a state variable changes/updates React will trigger a Reconciliation Cycle (Re-renders whole Component)
 Incase of an input field , react will Re-render whole component on every keyPress  of input field 
+
+# Types Of Routing in web apps
+    - Client side routing - Navigating to different Components within the client side is Client side routing
+    - Server side routing- making a network call and getting the data and  making the whole page refresh is server side routing
