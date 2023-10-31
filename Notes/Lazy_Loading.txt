@@ -1,0 +1,39 @@
+Lazy Loading / Dynamic Loading / app Chunking / Code-Splitting/ on-Demand-Loading/ Dynamic Bundling:
+-----------------------------------------------------------------------------------------------------
+
+    In React , all the components code is bundled in Js file by bundler (parcel,webpack,vite ...) ,Suppose if we have some 100s of components 
+    in the web app  then the loading will take time and hich reduces the performance of the app obviously reducing user Experience
+    in order to improve the performance of our web app the concept of lazy loading comes to picture
+
+    - With lazy loading we can split our code into different logical bundler files and then load those bundler files whenever needed
+    this will optimizes the performance of our webApp
+
+    the Demo was present in the Code , Refer App.js,Grocery.js,files
+
+(1) why and when do we need Lazy()?
+    React.lazy() is a function provided by React that allows you to perform code splitting in your React application.
+     Code splitting is a technique used to split your JavaScript bundle into smaller, more manageable chunks. 
+     Lazy loading and code splitting are beneficial in several scenarios:
+     1) reducing initial Load time
+     2) Improving performance on slow networks
+     3) enhancing user Experience
+
+(2) What is Suspense ?
+        Suspense is a feature in React that allows you to declaratively manage asynchronous operations, 
+        such as data fetching or lazy component loading, while providing a better user experience by displaying 
+        fallback content (e.g., loading spinners) until the asynchronous operation completes. Suspense helps in 
+        improving the perceived performance and user interface responsiveness in your React applications.
+
+
+(3) Why do we get this Error ? A component suspended while responding to a synchronus input.This will cause the UI to be replaced with 
+    a loading Indicator .....,  how Suspense fix this error ?
+
+        The above error occurs when we use Lazy() function in React and donot wrap the Lazy Component inside a suspence component
+        because when we try to access the lazy component after initial render it takes some time to bundle the lazy componets code,
+        but React is so fast and it tries to access the data of a lazy component which is not bundled yet .
+
+        wrapping the Lazy componet inside a suspence component makes React wait until the bundler file is generated meanwhile we can display something 
+        to user by passing to fallback inside suspence componet
+        ex:
+        --
+        <suspence fallback={<h1>Loading the Lazy Component please wait !!</h1>}><LazyComponent/></suspence>
