@@ -28,6 +28,7 @@ import RestaurantInfo from "./components/RestaurantInfo";
 
 // const parent = React.createElement("div", { id: "parent" }, [
 //   React.createElement("div", { id: "child1" }, [
+
 //     React.createElement("h1", {}, "Im h1 tag in child1 div element"),
 //     React.createElement("h2", {}, "im h2 tag in child1 div element"),
 //   ]),
@@ -40,8 +41,8 @@ import RestaurantInfo from "./components/RestaurantInfo";
 const Grocery = React.lazy(() => import("./components/Grocery"));
 const AppLayout = () => {
   return (
-    <div className="app">
-      <Header />
+    <div >
+      <Header/>
       <Outlet />
     </div>
   );

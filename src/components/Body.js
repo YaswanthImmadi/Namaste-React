@@ -10,14 +10,15 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const status=useOnlineStatus();
+  const status = useOnlineStatus();
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.3066525&lng=80.4365402&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     // console.log(json);
@@ -36,48 +37,49 @@ const Body = () => {
   //   return <Shimmer />;
   // }
   // using ternary Operator
-  if(status === false)return <h1>No Internet Connection , please Check your network</h1>
+  if (status === false)
+    return <h1>No Internet Connection , please Check your network</h1>;
   return listOfRestaurants.length === 0 ? (
-    <Shimmer />
+    <Shimmer/>
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
-          <input
-            type="text"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          <button
-            className="search-btn"
-            onClick={() => {
-              let filterData = listOfRestaurants.filter((res) => {
-                return res.info.name
-                  .toLowerCase()
-                  .includes(searchText.toLowerCase());
-              });
-              setFilteredList(filterData);
-            }}
-          >
-            search
-          </button>
-        </div>
+      <div className=" m-4 p-2">
+        <input
+          type="text"
+          className=" border border-solid border-black rounded-lg"
+          value={searchText}
+          onChange={(e) => {
+            setSearchText(e.target.value);
+          }}
+        />
         <button
-          className="filter-btn"
+          className=" m-2 px-4 py-1 rounded-lg"
           onClick={() => {
-            filteredList = listOfRestaurants.filter(
+            let filterData = listOfRestaurants.filter((res) => {
+              return res.info.name
+                .toLowerCase()
+                .includes(searchText.toLowerCase());
+            });
+            setFilteredList(filterData);
+          }}
+        >
+          🔍
+        </button>
+        <button
+          className=" bg-green-100  m-2 px-4 py-1 rounded-lg"
+          onClick={() => {
+            let data = listOfRestaurants.filter(
               (res) => res.info.avgRating >= 4
             );
             // console.log(filteredList);
-            setListOfRestaurants(filteredList);
+            setFilteredList(data);
           }}
         >
           Know Top Rated Restaurants
         </button>
       </div>
-      <div className="res-container">
+
+      <div className="flex flex-wrap  ml-[160px] ">
         {/* <RestaurantCard resData={resList[0]} />
           <RestaurantCard resData={resList[1]} />
           <RestaurantCard resData={resList[2]} />

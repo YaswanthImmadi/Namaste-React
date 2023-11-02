@@ -8,18 +8,18 @@ export const Header = () => {
   // console.log("Header Rendered")
   const status=useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between m-2 shadow-md ">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-[100px] mx-[100px]" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className=" items-center">
+        <ul className="flex p-5 m-2 mr-8 font-bold" >
          
-          <li><Link to='/' >Home</Link></li>
-          <li><Link to='/about'>About Us</Link></li>
-          <li><Link to='/contact'>Contact Us</Link></li>
-          <li><Link to="/grocery">Grocery</Link></li>
-          <li>Online:{status?'🟢':'🔴'}</li>
+          <li className="px-4  hover:text-orange-600"><Link to='/' >Home</Link></li>
+          <li className="px-4  hover:text-orange-600"><Link to='/about'>About Us</Link></li>
+          <li className="px-4  hover:text-orange-600"><Link to='/contact'>Contact Us</Link></li>
+          <li className="px-4  hover:text-orange-600"><Link to="/grocery">Grocery</Link></li>
+          <li className="px-4  hover:text-orange-600">Online:{status?'🟢':'🔴'}</li>
 
           <button
             className="login"
