@@ -10,7 +10,7 @@ const RestaurantCard = (props) => {
         className="w-full h-[60%] object-cover rounded-lg"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h3 className="font-bold py-2 font-futura text-md text-orange-500">
+      <h3 className="font-bold py-2 font-futura text-md-blue-500">
         {name}
         <br />⭐{avgRating} 🚚 {resData.info.sla.deliveryTime} mins
       </h3>
@@ -19,4 +19,16 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+// creating a Higher order Component for addign a promoted lable on the restaurant cards
+export const withPromotedLable=(RestaurantCard)=>{
+  return (props)=>{
+    return(
+      <div>
+        <label className="text-white bg-black m-2 p-2 rounded-md absolute ">Opened</label>
+        <RestaurantCard {...props}/>
+      </div>
+    )
+  }
+}
 export default RestaurantCard;

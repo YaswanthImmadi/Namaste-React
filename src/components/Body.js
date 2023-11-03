@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLable } from "./RestaurantCard";
 // import resList from "../../utils/mockData";
 import React from "react";
 import { useState, useEffect } from "react";
@@ -11,6 +11,8 @@ const Body = () => {
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const status = useOnlineStatus();
+
+  const RestaurantCardPromoted = withPromotedLable(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -40,7 +42,7 @@ const Body = () => {
   if (status === false)
     return <h1>No Internet Connection , please Check your network</h1>;
   return listOfRestaurants.length === 0 ? (
-    <Shimmer/>
+    <Shimmer />
   ) : (
     <div className="body">
       <div className=" m-4 p-2">
@@ -103,12 +105,15 @@ const Body = () => {
         {/* Instaed Of manually creating the RestaurantCard component we can use map function to loop over the resList like below */}
         {filteredList.map((restaurant) => (
           // console.log(restaurant)
-          // console.log(restaurant)
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {/***We need to return a restaurant card with promoted lable if it is true else return a normal restaurant card 
+             * using ternary operator
+             */}
+             {restaurant.info.isOpen?(<RestaurantCardPromoted resData={restaurant}/>):<RestaurantCard resData={restaurant} />}
+            
           </Link>
         ))}
       </div>
