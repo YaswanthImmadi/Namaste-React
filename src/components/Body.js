@@ -1,16 +1,20 @@
 import RestaurantCard, { withPromotedLable } from "./RestaurantCard";
 // import resList from "../../utils/mockData";
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect,useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
+import UserContext from "../../utils/UserContext";
+
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredList, setFilteredList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const status = useOnlineStatus();
+
+  const {loggedInUser,setUserName}=useContext(UserContext);
 
   const RestaurantCardPromoted = withPromotedLable(RestaurantCard);
 
@@ -79,6 +83,12 @@ const Body = () => {
         >
           Know Top Rated Restaurants
         </button>
+        <input
+          type="text"
+          className=" border border-solid border-black rounded-lg mx-2"
+          value={loggedInUser}
+          onChange={(e) =>setUserName(e.target.value)}
+        />
       </div>
 
       <div className="flex flex-wrap  ml-[160px] ">

@@ -7,7 +7,12 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
+import { useState, useContext, useEffect } from "react";
+import UserContext from "../utils/UserContext";
 // import Grocery from "./components/Grocery";
+import { Provider } from "react-redux";
+import appStore from "../utils/appStore";
+import Cart from "./components/Cart";
 
 /* <div id="parent">
     <div id="child1">
@@ -39,12 +44,26 @@ import RestaurantInfo from "./components/RestaurantInfo";
 // ]);
 // if we want to write more than one line in a tag then use parenthesis like below
 const Grocery = React.lazy(() => import("./components/Grocery"));
+
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  useEffect(() => {
+    const data = {
+      name: "Yaswanth",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div >
-      <Header/>
-      <Outlet />
-    </div>
+    <Provider store={appStore} >
+    <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
+      <div>
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
@@ -75,6 +94,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:id",
         element: <RestaurantInfo />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <Error />,

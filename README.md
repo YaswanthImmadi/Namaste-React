@@ -67,3 +67,14 @@ Incase of an input field , react will Re-render whole component on every keyPres
 # Types Of Routing in web apps
     - Client side routing - Navigating to different Components within the client side is Client side routing
     - Server side routing- making a network call and getting the data and  making the whole page refresh is server side routing
+
+
+# Redux Tool Kit
+    -install @reduxjs/toolKit and react-react
+    -bulid our store
+    -connect our store to our app
+    - create a slice to add items to cart
+    - dispatch Action when we click on add button
+    - read the data using selector
+    
+
