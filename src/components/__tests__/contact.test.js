@@ -4,6 +4,21 @@ import '@testing-library/jest-dom'
 
 // a block for all the test-cases written 
 describe("Contact us page Test Cases",()=>{
+
+        beforeAll(()=>{
+            console.log('Before All')
+        })
+        beforeEach(()=>{
+            console.log('Before Each')
+        })
+        afterAll(()=>{
+            console.log('after All')
+        })
+        afterEach(()=>{
+            console.log('After Each')
+        })
+        
+
     test("Testig Contact us Page", () => {
         // we need to render our component to the js dom before we write the testCases,
         //for that we use render method from react testing library

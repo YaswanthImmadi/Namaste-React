@@ -15,7 +15,7 @@ export const Header = () => {
 
   // Subscribing to appStore created inorder to read data , we use useSelector Hook form react-redux
   const cartItems=useSelector((store)=>store.cart.items)
-  console.log(cartItems)
+  //console.log(cartItems)
 
   return (
     <div className="flex justify-between m-2 shadow-md ">

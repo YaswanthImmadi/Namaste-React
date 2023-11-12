@@ -52,6 +52,7 @@ const Body = () => {
       <div className=" m-4 p-2">
         <input
           type="text"
+          data-testid="search"
           className=" border border-solid border-black rounded-lg"
           value={searchText}
           onChange={(e) => {
@@ -69,7 +70,7 @@ const Body = () => {
             setFilteredList(filterData);
           }}
         >
-          🔍
+          search
         </button>
         <button
           className=" bg-green-100  m-2 px-4 py-1 rounded-lg"

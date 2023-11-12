@@ -1,0 +1,94 @@
+{
+    "info": {
+        "id": "48227",
+        "name": "Kanti Sweets",
+        "cloudinaryImageId": "dhcdvnp6oohqaenixza2",
+        "locality": "Gandhi Nagar",
+        "areaName": "Alankar Plaza",
+        "costForTwo": "₹150 for two",
+        "cuisines": [
+            "Sweets"
+        ],
+        "avgRating": 4.2,
+        "veg": true,
+        "feeDetails": {
+            "restaurantId": "48227",
+            "fees": [
+                {
+                    "name": "BASE_DISTANCE",
+                    "fee": 3200
+                },
+                {
+                    "name": "BASE_TIME"
+                },
+                {
+                    "name": "ANCILLARY_SURGE_FEE"
+                }
+            ],
+            "totalFee": 3200
+        },
+        "parentId": "4700",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "500+",
+        "sla": {
+            "deliveryTime": 31,
+            "lastMileTravel": 2.8,
+            "serviceability": "SERVICEABLE",
+            "slaString": "31 mins",
+            "lastMileTravelString": "2.8 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2023-11-12 22:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "v1695133679/badges/Pure_Veg111.png",
+                    "description": "pureveg"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "pureveg",
+                                "imageId": "v1695133679/badges/Pure_Veg111.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "20% OFF",
+            "subHeader": "UPTO ₹50",
+            "discountTag": "FOR YOU",
+            "headerTypeV2": "HEADER_TYPE_V2_TOP_UP"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "mediaType": "ADS_MEDIA_ENUM_IMAGE",
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {}
+    },
+    "analytics": {},
+    "cta": {
+        "link": "https://www.swiggy.com/restaurants/kanti-sweets-gandhi-nagar-alankar-plaza-bangalore-48227",
+        "type": "WEBLINK"
+    }
+}
