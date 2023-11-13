@@ -5,13 +5,15 @@ import { addItem } from "../../utils/cartSlice";
 const ItemList = ({ items }) => {
   //   console.log(items);
   const dispatch = useDispatch();
-  const handleAddItem = (item) => {
+  const handleAddItem = (event,item) => {
+    event.stopPropagation();
     dispatch(addItem(item));
   };
   return (
     <div>
       {items.map((item) => (
         <div
+          data-testid='items'
           key={item.card.info.id}
           className="m-2 p-2 border-gray-200 border-b-2 text-left"
         >
@@ -34,7 +36,7 @@ const ItemList = ({ items }) => {
               />
               <button
                 className="p-1 mx-10 rounded-md bg-white text-green font-semibold "
-                onClick={() => handleAddItem(item)}
+                onClick={(event) => handleAddItem(event,item)}
               >
                 Add +
               </button>

@@ -37,10 +37,10 @@ export const Header = () => {
             <Link to="/grocery">Grocery🧺</Link>
           </li>
           <li className="px-4  hover:text-orange-600 text-lg">
-            <Link to="/cart">🛒[{cartItems.length}]</Link>
+            <Link to="/cart">Cart[{cartItems.length}]</Link>
           </li>
           <li className="px-4  hover:text-orange-600">
-            🛜:{status ? "🟢" : "🔴"}
+            📶:{status ? "🟢" : "🔴"}
           </li>
 
           <li className="px-4  hover:text-orange-600">{loggedInUser}</li>

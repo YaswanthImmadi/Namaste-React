@@ -24,7 +24,7 @@ test("should search resList for burger search input", async () => {
     )
   );
 
-  const searchBtn=screen.getByRole('button',{name:'search'})
+  const searchBtn=screen.getByTestId('search')
 //   console.log(searchBtn)
 
   // assertion
@@ -41,7 +41,7 @@ test("should search resList for burger search input", async () => {
 
   const cards=screen.getAllByTestId('resCard')
 
-  expect(cards.length).toBe(2);
+  expect(cards.length).toBe(20);
 
   
 

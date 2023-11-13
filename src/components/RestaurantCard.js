@@ -13,7 +13,7 @@ const RestaurantCard = (props) => {
       />
       <h3 data-testid='name' className="font-bold py-2 font-futura text-md-blue-500">
         {name}
-        <br />⭐{avgRating} 🚚 {resData.info.sla.deliveryTime} mins
+        <br />⭐{avgRating} 🕒 {resData.info.sla.deliveryTime} mins
       </h3>
       <h5 className=" overflow-hidden  text-sm">{cuisines.join(",")}</h5>
       <h5>{costForTwo}</h5>
