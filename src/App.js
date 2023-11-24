@@ -58,7 +58,7 @@ const AppLayout = () => {
   return (
     <Provider store={appStore} >
     <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
-      <div>
+      <div className="font-ProximaNovaSemiBold">
         <Header />
         <Outlet />
       </div>
