@@ -2,6 +2,7 @@ import React from "react";
 import ItemList from "./ItemList";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../utils/cartSlice";
+import CartList from './CartList'
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
@@ -10,6 +11,16 @@ const Cart = () => {
   const handleClearCart = () => {
     dispatch(clearCart());
   };
+
+  const handleOrderClick=()=>{
+    if(cartItems.length === 0){
+      alert('Please Add Items to the cart')
+      Navigate('/')
+      return
+    }
+    Navigate('/order')
+  }
+
   return (
     <div>
       <h1 className="font-bold text-xl m-8 p-8 text-center">Your Cart Items</h1>
@@ -19,6 +30,12 @@ const Cart = () => {
           onClick={handleClearCart}
         >
           ClearCart
+        </button>
+        <button
+          className="p-2 m-2 bg-black rounded-lg text-white"
+          onClick={handleOrderClick}
+        >
+          Place Order
         </button>
         {cartItems.length === 0 ? (
           <div className="flex flex-col items-center  p-6 m-6">
@@ -31,7 +48,7 @@ const Cart = () => {
            
           </div>
         ) : (
-          <ItemList items={cartItems} />
+         <CartList/>
         )}
       </div>
     </div>
