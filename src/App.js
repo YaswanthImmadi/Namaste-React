@@ -13,6 +13,8 @@ import UserContext from "../utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
+import Order from './components/Order'
+
 
 /* <div id="parent">
     <div id="child1">
@@ -98,6 +100,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/order",
+        element: <Order/>,
       },
     ],
     errorElement: <Error />,

@@ -1,4 +1,5 @@
 import { CDN_URL } from "../../utils/constants";
+import { FaStar } from "react-icons/fa";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -9,7 +10,7 @@ const RestaurantCard = (props) => {
   return (
     <div
       data-testid="resCard"
-      className=" my-3 p-4  w-[300px] h-[400px] rounded-lg"
+      className=" my-2 p-2 px-4 w-[300px] h-[300px] rounded-lg"
     >
       <img
         className="w-full h-[60%] object-cover rounded-lg"
@@ -22,11 +23,13 @@ const RestaurantCard = (props) => {
         {name}
         <br />
         <div className="flex justify-left">
-          <div className="bg-green-900 rounded-full p-2 w-7 h-7 flex items-center justify-center"></div>
+          <div className="bg-green-900 rounded-full p-2 w-7 h-7 flex items-center justify-center">
+          <FaStar className="text-white w-5 h-5" />
+          </div>
           <h3 className="ml-1">
-            {" "}
-            {avgRating} . {resData.info.sla.deliveryTime} mins
-          </h3>
+              {" "}
+              {avgRating} . {resData.info.sla.deliveryTime} mins
+            </h3>
         </div>
       </h3>
       <h5 className=" overflow-hidden mx-1  text-sm">

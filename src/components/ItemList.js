@@ -17,6 +17,7 @@ const ItemList = ({ items, setShowDiv }) => {
   const [itemCounts, setItemCounts] = useState({});
 
   const handleAddItem = (event, item) => {
+    event.stopPropagation();
     setItemCounts((prev) => ({
       ...prev,
       [item?.card?.info?.id]: (prev[item?.card?.info?.id] || 0) + 1,
@@ -24,10 +25,11 @@ const ItemList = ({ items, setShowDiv }) => {
     dispatch(addItem(item));
     dispatch(increamentCount());
     dispatch(addToPrice(item.card.info.price || item.card.info.defaultPrice));
-    setShowDiv(true);
+   setShowDiv(true)
   };
 
-  const handleRemoveItem = (item) => {
+  const handleRemoveItem = (event,item) => {
+    event.stopPropagation();
     setItemCounts((prev) => ({
       ...prev,
       [item?.card?.info?.id]: (prev[item?.card?.info?.id] || 0) - 1,
@@ -72,7 +74,7 @@ const ItemList = ({ items, setShowDiv }) => {
                 {(itemCounts[item.card.info.id] || 0) === 0 ? (
                   <button
                     className="absolute bottom-0 right-0 p-1 mx-4 rounded-md bg-white text-green-600 font-semibold flex justify-between items-center shadow-lg"
-                    onClick={(event) => handleRemoveItem(event, item)}
+                    onClick={(event) => handleAddItem(event, item)}
                   >
                     ADD+
                   </button>
@@ -84,7 +86,7 @@ const ItemList = ({ items, setShowDiv }) => {
                     >
                       -
                     </button>
-                    <span>{item.count}</span>
+                    <span>{itemCounts[item.card.info.id] || 0}</span>
                     <button
                       className="px-2 mx-2 font-bold text-lg"
                       onClick={(event) => handleAddItem(event, item)}

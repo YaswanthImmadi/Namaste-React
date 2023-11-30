@@ -8,7 +8,7 @@ const RestaurantInfo = () => {
   let { id } = useParams();
 
   const resInfo = useRestaurantInfo(id);
-  console.log(resInfo)
+  // console.log(resInfo)
   const [showIndex, setShowIndex] = useState(null);
 
   if (resInfo === null) return <Shimmer />;
@@ -60,10 +60,14 @@ const RestaurantInfo = () => {
 
           <div className="w-[80px] my-4 ">
             <table className="border-2 border-solid border-black-400 text-center">
-              <tr className="border-b-2 border-black-250 text-green-600 font-bold p-2">
-                ⭐{avgRating}
-              </tr>
-              <tr className="text-sm p-2">{totalRatingsString}</tr>
+              <thead>
+                <tr className="border-b-2 border-black-250 text-green-600 font-bold p-2">
+                  <td>⭐{avgRating}</td>
+                </tr>
+                <tr className="text-sm p-2">
+                  <td>{totalRatingsString}</td>
+                </tr>
+              </thead>
             </table>
           </div>
         </div>
@@ -72,6 +76,7 @@ const RestaurantInfo = () => {
       {Array.isArray(categories) &&
         categories.map((category, index) => (
           <RestaurantCategory
+            key={category.card?.card?.title}
             data={category.card?.card}
             showItems={showIndex === index ? true : false}
             setShowIndex={() => handleAccordianClick(index)}

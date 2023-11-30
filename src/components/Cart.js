@@ -3,10 +3,12 @@ import ItemList from "./ItemList";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../../utils/cartSlice";
 import CartList from './CartList'
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
+  const Navigate=useNavigate();
 
   const handleClearCart = () => {
     dispatch(clearCart());

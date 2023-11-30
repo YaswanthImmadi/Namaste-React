@@ -4,7 +4,7 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     listOfRestaurants: [],
-    filteredList: [],
+    images: [],
     onlineRestaurants: [],
     offers: [],
   },
@@ -12,8 +12,8 @@ const dataSlice = createSlice({
     setListOfRestaurants: (state, action) => {
       state.listOfRestaurants = action.payload;
     },
-    setFilteredList: (state, action) => {
-      state.filteredList = action.payload;
+    setImages: (state, action) => {
+      state.images = action.payload;
     },
     setOnlineRestaurants: (state, action) => {
       state.onlineRestaurants = action.payload;
@@ -25,7 +25,7 @@ const dataSlice = createSlice({
 });
 export const {
   setListOfRestaurants,
-  setFilteredList,
+  setImages,
   setOnlineRestaurants,
   setOffers,
 } = dataSlice.actions;

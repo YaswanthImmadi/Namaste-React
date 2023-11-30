@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 import UserContext from "../../utils/UserContext";
 import { useSelector } from "react-redux";
+import { IoWifi } from "react-icons/io5";
+import { CiWifiOff } from "react-icons/ci";
 
 export const Header = () => {
   const [btnName, setBtnName] = useState("Login");
@@ -33,17 +35,17 @@ export const Header = () => {
           <li className="px-4  hover:text-orange-600">
             <Link to="/contact">Contact Us</Link>
           </li>
-          <li className="px-4  hover:text-orange-600">
+          {/* <li className="px-4  hover:text-orange-600">
             <Link to="/grocery">Grocery🧺</Link>
-          </li>
+          </li> */}
           <li className="px-4  hover:text-orange-600 text-lg">
             <Link to="/cart">Cart[{cartItems.length}]</Link>
           </li>
           <li className="px-4  hover:text-orange-600">
-            📶:{status ? "🟢" : "🔴"}
+            {status ? <IoWifi className="text-green-700 text-2xl" /> : <CiWifiOff className="text-2xl text-red-700" />}
           </li>
 
-          <li className="px-4  hover:text-orange-600">{loggedInUser}</li>
+          {/* <li className="px-4  hover:text-orange-600">{loggedInUser}</li> */}
           <button
             className="login"
             onClick={() => {
