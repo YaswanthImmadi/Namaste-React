@@ -13,8 +13,8 @@ import UserContext from "../utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "../utils/appStore";
 import Cart from "./components/Cart";
-import Order from './components/Order'
-
+import Order from "./components/Order";
+import Login from "./components/Login";
 
 /* <div id="parent">
     <div id="child1">
@@ -58,13 +58,13 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <Provider store={appStore} >
-    <UserContext.Provider value={{loggedInUser:userName,setUserName}}>
-      <div className="font-ProximaNovaSemiBold">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+        <div className="font-ProximaNovaSemiBold">
+          {/* <Header /> */}
+          <Outlet />
+        </div>
+      </UserContext.Provider>
     </Provider>
   );
 };
@@ -75,35 +75,69 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: <Login />,
       },
       {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
-      },
-      {
-        path: "/grocery",
+        path: "/home",
         element: (
-          <Suspense fallback={<h1>Loading....</h1>}>
-            <Grocery />
-          </Suspense>
+          <>
+            <Header />
+            <Body />
+          </>
         ),
       },
       {
+        path: "/about",
+        element: (
+          <>
+            <Header />
+            <About />
+          </>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <>
+            <Header />
+            <Contact />
+          </>
+        ),
+      },
+      // {
+      //   path: "/grocery",
+      //   element: (
+      //     <Suspense fallback={<h1>Loading....</h1>}>
+      //       <Grocery />
+      //     </Suspense>
+      //   ),
+      // },
+      {
         path: "/restaurant/:id",
-        element: <RestaurantInfo />,
+        element: (
+          <>
+            <Header />
+            <RestaurantInfo />,
+          </>
+        ),
       },
       {
         path: "/cart",
-        element: <Cart />,
+        element: (
+          <>
+            <Header />
+            <Cart />
+          </>
+        ),
       },
       {
         path: "/order",
-        element: <Order/>,
+        element: (
+          <>
+            <Header />
+            <Order />
+          </>
+        ),
       },
     ],
     errorElement: <Error />,
