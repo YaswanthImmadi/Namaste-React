@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../../utils/userSlice";
+import Header from './Header'
 
 const Login = () => {
   const [isSignIn, setIsSign] = useState(true);
@@ -125,7 +126,7 @@ const Login = () => {
       {/* <Header /> */}
       <div className="absolute">
         <img
-          src="https://www.rewardsnetwork.com/wp-content/uploads/2020/08/restaurant-ambiance-cover.jpg"
+          src="https://images.squarespace-cdn.com/content/v1/5fac753a19904608da14a085/1606268963813-NSC3YINQPJPJ24PCK286/Tacos+%26+Beer+Interior+Vibe"
           alt="Image Not Found"
           className="w-screen h-screen"
         />
@@ -164,8 +165,8 @@ const Login = () => {
         </button>
         <p className="text-sm py-2 cursor-pointer" onClick={toggleSignIn}>
           {isSignIn
-            ? "New to Netflix? Sign up now"
-            : "Already a Registered? Sign in now"}
+            ? "New to MealMate? Sign up now"
+            : "Already Registered? Sign in now"}
         </p>
       </form>
     </div>

@@ -10,6 +10,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../../utils/userSlice";
+import { IoFastFood } from "react-icons/io5";
 
 export const Header = () => {
   // const [btnName, setBtnName] = useState("Login");
@@ -56,7 +57,8 @@ export const Header = () => {
     <div className="flex justify-between m-2 shadow-md ">
       <div className="logo-container">
         <Link to="/home">
-          <img className="w-[100px] mx-[100px]" src={LOGO_URL} />
+          {/* <img className="w-[100px] mx-[100px]" src={LOGO_URL} /> */}
+          <div className="flex  my-4 mx-2 items-center  text-orange-500 text-3xl"><IoFastFood  className="w-10 h-10 flex "/><h1 className="italic">MealMate</h1></div>
         </Link>
       </div>
       <div className=" items-center">
