@@ -35,7 +35,7 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.3066525&lng=80.4365402&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4399295&lng=78.4982741&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
     // console.log(json);
@@ -61,7 +61,7 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="mx-auto  max-w-screen-lg">
-      <div className=" m-4 p-2 items-center ">
+      {/* <div className=" m-4 p-2 items-center ">
         <input
           type="text"
           data-testid="search"
@@ -71,19 +71,19 @@ const Body = () => {
           onChange={(e) => {
             const newValue = e.target.value;
             setSearchText(newValue);
-            let filterData = listOfRestaurants.filter((res) => {
+            let filterData = data.listOfRestaurants.filter((res) => {
               return res.info.name
                 .toLowerCase()
                 .includes(newValue.toLowerCase());
             });
             {
               searchText === ""
-                ? setListOfRestaurants(listOfRestaurants)
+                ? setListOfRestaurants(data.listOfRestaurants)
                 : setFilteredList(filterData);
             }
           }}
         />
-      </div>
+      </div> */}
 
       <div className="m-4">
         <div className="flex justify-between items-center ">
